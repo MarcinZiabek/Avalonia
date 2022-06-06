@@ -58,6 +58,10 @@
         <Setter Property="BorderBrush" Value="{DynamicResource RepeatButtonBorderBrushDisabled}" />
         <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForegroundDisabled}" />
       </Style>
+
+      <Style Selector="^:pressed">
+        <Setter Property="RenderTransform" Value="scale(0.98)" />
+      </Style>
     </ControlTheme>
   </Style.Resources>
 

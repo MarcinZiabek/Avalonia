@@ -1,5 +1,6 @@
-﻿<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<Style xmlns="https://github.com/avaloniaui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       Selector="AutoCompleteBox">
   <Design.PreviewWith>
     <Border Padding="20">
       <AutoCompleteBox Width="200">
@@ -17,7 +18,7 @@
     </Border>
   </Design.PreviewWith>
   
-  <Styles.Resources>
+  <Style.Resources>
     <ControlTheme x:Key="FluentAutoCompleteBox" TargetType="AutoCompleteBox">
       <Setter Property="VerticalAlignment" Value="Top" />
       <Setter Property="Foreground" Value="{DynamicResource TextControlForeground}" />
@@ -67,9 +68,7 @@
         </ControlTemplate>
       </Setter>
     </ControlTheme>
-  </Styles.Resources>
+  </Style.Resources>
   
-  <Style Selector="AutoCompleteBox">
-    <Setter Property="Theme" Value="{StaticResource FluentAutoCompleteBox}" />
-  </Style>
-</Styles>
+  <Setter Property="Theme" Value="{StaticResource FluentAutoCompleteBox}" />
+</Style>

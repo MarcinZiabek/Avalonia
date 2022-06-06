@@ -113,6 +113,10 @@
           <Setter Property="BorderBrush" Value="{DynamicResource ToggleButtonBorderBrushCheckedDisabled}" />
           <Setter Property="Foreground" Value="{DynamicResource ToggleButtonForegroundCheckedDisabled}" />
         </Style>
+
+        <Style Selector="^:pressed">
+          <Setter Property="RenderTransform" Value="scale(0.98)" />
+        </Style>
       </Style>
     </ControlTheme>
   </Style.Resources>

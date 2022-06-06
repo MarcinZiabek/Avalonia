@@ -95,7 +95,10 @@
       <Style Selector="^:disabled /template/ PathIcon#DropDownGlyph">
         <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundDisabled}" />
       </Style>
-      
+
+      <Style Selector="^:pressed">
+        <Setter Property="RenderTransform" Value="scale(0.98)" />
+      </Style>
     </ControlTheme>
   </Styles.Resources>
   

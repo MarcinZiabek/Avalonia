@@ -1,4 +1,6 @@
-﻿<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<Style xmlns="https://github.com/avaloniaui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       Selector="Button">
   <Design.PreviewWith>
     <Border Padding="20">
       <StackPanel Spacing="20">
@@ -8,7 +10,7 @@
     </Border>
   </Design.PreviewWith>
   
-  <Styles.Resources>
+  <Style.Resources>
     <Thickness x:Key="ButtonPadding">8,5,8,6</Thickness>
     
     <ControlTheme x:Key="FluentButton" TargetType="Button">
@@ -86,10 +88,12 @@
           <Setter Property="Foreground" Value="{DynamicResource AccentButtonForegroundDisabled}" />
         </Style>
       </Style>
+
+      <Style Selector="^:pressed">
+        <Setter Property="RenderTransform" Value="scale(0.98)" />
+      </Style>
     </ControlTheme>
-  </Styles.Resources>
-  
-  <Style Selector="Button">
-    <Setter Property="Theme" Value="{StaticResource FluentButton}" />
-  </Style>
-</Styles>
+  </Style.Resources>
+
+  <Setter Property="Theme" Value="{StaticResource FluentButton}" />
+</Style>
