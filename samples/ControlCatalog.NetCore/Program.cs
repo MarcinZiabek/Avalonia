@@ -115,7 +115,8 @@ namespace ControlCatalog.NetCore
                 })
                 .With(new Win32PlatformOptions
                 {
-                    EnableMultitouch = true
+                    EnableMultitouch = true,
+                    OverlayPopups = true,
                 })
                 .UseSkia()
                 .AfterSetup(builder =>

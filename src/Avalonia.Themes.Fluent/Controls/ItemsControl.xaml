@@ -1,16 +1,24 @@
-<Style xmlns="https://github.com/avaloniaui" Selector="ItemsControl">
-  <Setter Property="Template">
-    <ControlTemplate>
-      <Border Background="{TemplateBinding Background}"
-              BorderBrush="{TemplateBinding BorderBrush}"
-              BorderThickness="{TemplateBinding BorderThickness}"
-              CornerRadius="{TemplateBinding CornerRadius}"
-              Padding="{TemplateBinding Padding}">
-        <ItemsPresenter Name="PART_ItemsPresenter"
-                        Items="{TemplateBinding Items}"
-                        ItemsPanel="{TemplateBinding ItemsPanel}"
-                        ItemTemplate="{TemplateBinding ItemTemplate}"/>
-      </Border>
-    </ControlTemplate>
-  </Setter>
+<Style xmlns="https://github.com/avaloniaui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       Selector="ItemsControl">
+  <Style.Resources>
+    <ControlTheme x:Key="FluentItemsControl" TargetType="ItemsControl">
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Border Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="{TemplateBinding CornerRadius}"
+                  Padding="{TemplateBinding Padding}">
+            <ItemsPresenter Name="PART_ItemsPresenter"
+                            Items="{TemplateBinding Items}"
+                            ItemsPanel="{TemplateBinding ItemsPanel}"
+                            ItemTemplate="{TemplateBinding ItemTemplate}"/>
+          </Border>
+        </ControlTemplate>
+      </Setter>
+    </ControlTheme>
+  </Style.Resources>
+
+  <Setter Property="Theme" Value="{StaticResource FluentItemsControl}" />
 </Style>

@@ -1,4 +1,5 @@
-<Styles xmlns="https://github.com/avaloniaui">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Design.PreviewWith>
     <Border Padding="20">
       <TabStrip>
@@ -8,25 +9,23 @@
       </TabStrip>
     </Border>
   </Design.PreviewWith>
+  <Styles.Resources>
+    <ControlTheme x:Key="FluentTabStrip" TargetType="TabStrip">
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" Padding="{TemplateBinding Padding}">
+            <ItemsPresenter Name="PART_ItemsPresenter" Items="{TemplateBinding Items}" ItemsPanel="{TemplateBinding ItemsPanel}" ItemTemplate="{TemplateBinding ItemTemplate}" />
+          </Border>
+        </ControlTemplate>
+      </Setter>
+      <Setter Property="ItemsPanel">
+        <ItemsPanelTemplate>
+          <WrapPanel />
+        </ItemsPanelTemplate>
+      </Setter>
+    </ControlTheme>
+  </Styles.Resources>
   <Style Selector="TabStrip">
-    <Setter Property="Template">
-      <ControlTemplate>
-        <Border Background="{TemplateBinding Background}"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}"
-                CornerRadius="{TemplateBinding CornerRadius}"
-                Padding="{TemplateBinding Padding}">
-          <ItemsPresenter Name="PART_ItemsPresenter"
-                          Items="{TemplateBinding Items}"
-                          ItemsPanel="{TemplateBinding ItemsPanel}"
-                          ItemTemplate="{TemplateBinding ItemTemplate}" />
-        </Border>
-      </ControlTemplate>
-    </Setter>
-    <Setter Property="ItemsPanel">
-      <ItemsPanelTemplate>
-        <WrapPanel />
-      </ItemsPanelTemplate>
-    </Setter>
+    <Setter Property="Theme" Value="{StaticResource FluentTabStrip}" />
   </Style>
 </Styles>

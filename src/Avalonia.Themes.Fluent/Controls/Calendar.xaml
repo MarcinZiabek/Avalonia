@@ -1,3 +1,4 @@
+﻿
 <!--
 // (c) Copyright Microsoft Corporation.
 // This source is subject to the Microsoft Public License (Ms-PL).
@@ -5,34 +6,40 @@
 // All other rights reserved.
 -->
 
-<Styles xmlns="https://github.com/avaloniaui">
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Design.PreviewWith>
     <Border Padding="20">
       <Calendar />
     </Border>
   </Design.PreviewWith>
+  
+  <Styles.Resources>
+    <ControlTheme x:Key="FluentCalendar" TargetType="Calendar">
+      <Setter Property="Foreground" Value="{DynamicResource CalendarViewForeground}" />
+      <Setter Property="Background" Value="{DynamicResource CalendarViewBackground}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource CalendarViewBorderBrush}" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="HorizontalAlignment" Value="Left" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+      <Setter Property="Template">
+        <ControlTemplate>
+          <StackPanel Name="Root"
+                      HorizontalAlignment="Center"
+                      ClipToBounds="True">
+            <CalendarItem Name="CalendarItem"
+                          Background="{TemplateBinding Background}"
+                          BorderBrush="{TemplateBinding BorderBrush}"
+                          BorderThickness="{TemplateBinding BorderThickness}"
+                          HeaderBackground="{TemplateBinding HeaderBackground}"
+                          CornerRadius="{TemplateBinding CornerRadius}" />
+          </StackPanel>
+        </ControlTemplate>
+      </Setter>
+    </ControlTheme>
+  </Styles.Resources>
+  
   <Style Selector="Calendar">
-    <Setter Property="Foreground" Value="{DynamicResource CalendarViewForeground}" />
-    <Setter Property="Background" Value="{DynamicResource CalendarViewBackground}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource CalendarViewBorderBrush}" />
-    <Setter Property="BorderThickness" Value="1" />
-    <Setter Property="HorizontalAlignment" Value="Left" />
-    <Setter Property="VerticalAlignment" Value="Center" />
-    <Setter Property="Template">
-      <ControlTemplate>
-        <StackPanel Name="Root"
-                    HorizontalAlignment="Center"
-                    ClipToBounds="True">
-
-                    <CalendarItem Name="CalendarItem"
-                        Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        HeaderBackground="{TemplateBinding HeaderBackground}"
-                        CornerRadius="{TemplateBinding CornerRadius}"/>
-
-        </StackPanel>
-      </ControlTemplate>
-    </Setter>
+    <Setter Property="Theme" Value="{StaticResource FluentCalendar}" />
   </Style>
 </Styles>

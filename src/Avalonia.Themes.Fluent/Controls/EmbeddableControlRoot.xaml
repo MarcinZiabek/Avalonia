@@ -1,19 +1,28 @@
-<Style xmlns="https://github.com/avaloniaui" Selector="EmbeddableControlRoot">
-  <Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltHighBrush}"/>
-  <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}"/>
-  <Setter Property="Template">
-    <ControlTemplate>
-      <Panel>
-        <Border Name="PART_TransparencyFallback" IsHitTestVisible="False" />
-        <Border Background="{TemplateBinding Background}">
-          <VisualLayerManager>
-            <ContentPresenter Name="PART_ContentPresenter"
-                              ContentTemplate="{TemplateBinding ContentTemplate}"
-                              Content="{TemplateBinding Content}"
-                              Margin="{TemplateBinding Padding}"/>
-          </VisualLayerManager>
-        </Border>
-      </Panel>
-    </ControlTemplate>
-  </Setter>
-</Style>
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Styles.Resources>
+    <ControlTheme x:Key="FluentEmbeddableControlRoot" TargetType="EmbeddableControlRoot">
+      <Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltHighBrush}"/>
+      <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}"/>
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Panel>
+            <Border Name="PART_TransparencyFallback" IsHitTestVisible="False" />
+            <Border Background="{TemplateBinding Background}">
+              <VisualLayerManager>
+                <ContentPresenter Name="PART_ContentPresenter"
+                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                  Content="{TemplateBinding Content}"
+                                  Margin="{TemplateBinding Padding}"/>
+              </VisualLayerManager>
+            </Border>
+          </Panel>
+        </ControlTemplate>
+      </Setter>
+    </ControlTheme>
+  </Styles.Resources>
+
+  <Style Selector="EmbeddableControlRoot">
+    <Setter Property="Theme" Value="{StaticResource FluentEmbeddableControlRoot}" />
+  </Style>
+</Styles>
