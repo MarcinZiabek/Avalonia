@@ -1,16 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <Styles.Resources>
+<Style xmlns="https://github.com/avaloniaui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       Selector="Separator">
+  <Style.Resources>
     <ControlTheme x:Key="FluentSeparator" TargetType="Separator">
       <Setter Property="Focusable" Value="False" />
       <Setter Property="Template">
         <ControlTemplate>
-          <Border Padding="{TemplateBinding Margin}" Height="{TemplateBinding Height}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" Background="{TemplateBinding Background}" />
+          <Border Padding="{TemplateBinding Margin}" 
+                  Height="{TemplateBinding Height}"
+                  HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                  VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}" 
+                  CornerRadius="{TemplateBinding CornerRadius}"
+                  Background="{TemplateBinding Background}" />
         </ControlTemplate>
       </Setter>
     </ControlTheme>
-  </Styles.Resources>
-  <Style Selector="Separator">
-    <Setter Property="Theme" Value="{StaticResource FluentSeparator}" />
-  </Style>
-</Styles>
+  </Style.Resources>
+
+  <Setter Property="Theme" Value="{StaticResource FluentSeparator}" />
+</Style>

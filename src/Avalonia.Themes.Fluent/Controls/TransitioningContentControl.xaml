@@ -1,16 +1,24 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <Styles.Resources>
+﻿<Style xmlns="https://github.com/avaloniaui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       Selector="TransitioningContentControl">
+  <Style.Resources>
     <ControlTheme x:Key="FluentTransitioningContentControl" TargetType="TransitioningContentControl">
-      <!-- Set Defaults -->
       <Setter Property="Template">
         <ControlTemplate>
-          <ContentPresenter Name="PART_ContentPresenter" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding CurrentContent}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+          <ContentPresenter Name="PART_ContentPresenter"
+                            Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            Content="{TemplateBinding CurrentContent}"
+                            Padding="{TemplateBinding Padding}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
         </ControlTemplate>
       </Setter>
     </ControlTheme>
-  </Styles.Resources>
-  <Style Selector="TransitioningContentControl">
-    <Setter Property="Theme" Value="{StaticResource FluentTransitioningContentControl}" />
-  </Style>
-</Styles>
+  </Style.Resources>
+
+  <Setter Property="Theme" Value="{StaticResource FluentTransitioningContentControl}" />
+</Style>

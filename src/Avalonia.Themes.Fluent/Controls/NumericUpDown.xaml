@@ -1,13 +1,25 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Design.PreviewWith>
     <Border Padding="20">
       <StackPanel Spacing="20">
-        <NumericUpDown Minimum="0" Maximum="10" Increment="0.5" Width="150" Watermark="Enter text" />
-        <NumericUpDown Minimum="0" Maximum="10" Increment="0.5" Width="150" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ButtonSpinnerLocation="Left" Watermark="Enter text" />
+        <NumericUpDown Minimum="0"
+                       Maximum="10"
+                       Increment="0.5"
+                       Width="150"
+                       Watermark="Enter text" />
+        <NumericUpDown Minimum="0"
+                       Maximum="10"
+                       Increment="0.5"
+                       Width="150"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Center"
+                       ButtonSpinnerLocation="Left"
+                       Watermark="Enter text" />
       </StackPanel>
     </Border>
   </Design.PreviewWith>
+  
   <Styles.Resources>
     <ControlTheme x:Key="FluentNumericUpDown" TargetType="NumericUpDown">
       <Setter Property="Foreground" Value="{DynamicResource TextControlForeground}" />
@@ -21,13 +33,40 @@
       <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
       <Setter Property="Template">
         <ControlTemplate>
-          <ButtonSpinner Name="PART_Spinner" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="{TemplateBinding CornerRadius}" Padding="0" MinWidth="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" AllowSpin="{TemplateBinding AllowSpin}" ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}" DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}" ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}">
-            <TextBox Name="PART_TextBox" Background="Transparent" BorderBrush="Transparent" Margin="-1" Padding="{TemplateBinding Padding}" MinWidth="0" Foreground="{TemplateBinding Foreground}" FontSize="{TemplateBinding FontSize}" Watermark="{TemplateBinding Watermark}" IsReadOnly="{TemplateBinding IsReadOnly}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Text="{TemplateBinding Text}" AcceptsReturn="False" TextWrapping="NoWrap" />
+          <ButtonSpinner Name="PART_Spinner" 
+                         Background="{TemplateBinding Background}" 
+                         BorderThickness="{TemplateBinding BorderThickness}" 
+                         BorderBrush="{TemplateBinding BorderBrush}"
+                         CornerRadius="{TemplateBinding CornerRadius}"
+                         Padding="0"
+                         MinWidth="0"
+                         HorizontalContentAlignment="Stretch"
+                         VerticalContentAlignment="Stretch"
+                         AllowSpin="{TemplateBinding AllowSpin}"
+                         ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}" 
+                         DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}"
+                         ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}">
+            <TextBox Name="PART_TextBox" 
+                     Background="Transparent"
+                     BorderBrush="Transparent"
+                     Margin="-1" 
+                     Padding="{TemplateBinding Padding}" 
+                     MinWidth="0" 
+                     Foreground="{TemplateBinding Foreground}"
+                     FontSize="{TemplateBinding FontSize}" 
+                     Watermark="{TemplateBinding Watermark}" 
+                     IsReadOnly="{TemplateBinding IsReadOnly}" 
+                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                     Text="{TemplateBinding Text}" 
+                     AcceptsReturn="False"
+                     TextWrapping="NoWrap" />
           </ButtonSpinner>
         </ControlTemplate>
       </Setter>
     </ControlTheme>
   </Styles.Resources>
+  
   <Style Selector="NumericUpDown">
     <Setter Property="Theme" Value="{StaticResource FluentNumericUpDown}" />
   </Style>

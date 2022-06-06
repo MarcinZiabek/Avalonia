@@ -1,5 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<Style xmlns="https://github.com/avaloniaui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       Selector="TabStrip">
   <Design.PreviewWith>
     <Border Padding="20">
       <TabStrip>
@@ -9,12 +10,19 @@
       </TabStrip>
     </Border>
   </Design.PreviewWith>
-  <Styles.Resources>
+  <Style.Resources>
     <ControlTheme x:Key="FluentTabStrip" TargetType="TabStrip">
       <Setter Property="Template">
         <ControlTemplate>
-          <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" Padding="{TemplateBinding Padding}">
-            <ItemsPresenter Name="PART_ItemsPresenter" Items="{TemplateBinding Items}" ItemsPanel="{TemplateBinding ItemsPanel}" ItemTemplate="{TemplateBinding ItemTemplate}" />
+          <Border Background="{TemplateBinding Background}" 
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="{TemplateBinding CornerRadius}"
+                  Padding="{TemplateBinding Padding}">
+            <ItemsPresenter Name="PART_ItemsPresenter" 
+                            Items="{TemplateBinding Items}" 
+                            ItemsPanel="{TemplateBinding ItemsPanel}"
+                            ItemTemplate="{TemplateBinding ItemTemplate}" />
           </Border>
         </ControlTemplate>
       </Setter>
@@ -24,8 +32,7 @@
         </ItemsPanelTemplate>
       </Setter>
     </ControlTheme>
-  </Styles.Resources>
-  <Style Selector="TabStrip">
-    <Setter Property="Theme" Value="{StaticResource FluentTabStrip}" />
-  </Style>
-</Styles>
+  </Style.Resources>
+
+  <Setter Property="Theme" Value="{StaticResource FluentTabStrip}" />
+</Style>
